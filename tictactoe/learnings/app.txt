@@ -1,0 +1,8 @@
+## Django Apps:
+    python package
+    contains models, views , templates, urls
+    Most Django projects contain several Apps
+    Apps can be reused between projects
+    ## best practice:
+        Keep Apps small and simple
+            - Should have a clear, simple purpose

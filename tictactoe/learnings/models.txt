@@ -1,0 +1,14 @@
+## Models and Migrations 
+
+Models:
+    Python classes 
+    Mapped to db tables
+    Each object is a row in the table
+
+Migrations:
+    0--->0--|
+        0<--|
+        Python scripts 
+        Keep db structure in sync with code
+        Auto-generated (but not always)
+        Not a part of runtime code
