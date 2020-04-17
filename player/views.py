@@ -4,21 +4,11 @@ from gameplay.models import Game
 # Create your views here.
 def home(request):
     
-    game_first_player = Game.objects.filter(
-        first_player = request.user,
-        status='F'
-    )
-
-    game_second_player = Game.objects.filter(
-        second_player = request.user,
-        status='S'
-    )
-
-    all_my_games = list(game_first_player) + \
-        list(game_second_player)
+    my_games = Game.objects.games_for_user(request.user)
+    active_games = my_games.active()
     
     return render(request, "player/home.html",
-    {'games': all_my_games})
+    {'games': active_games} )
     
     #return render (request, 'player/home.html',
     #{ 'ngames': Game.objects.count()})
