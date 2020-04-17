@@ -20,6 +20,9 @@ class GameQuerySet(models.QuerySet):
             Q(status='F') | Q(status='S')
         )
 
+    def draw(self):
+        return self.filter(status='D')
+
 class Game(models.Model):
     first_player = models.ForeignKey(User, 
                         related_name="games_first_player")
