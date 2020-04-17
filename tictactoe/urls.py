@@ -17,7 +17,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+
 urlpatterns = [
     url(r'^rockiblx/', admin.site.urls),
+    url(r'^', include('gameplay.urls')),
     url(r'^player/', include('player.urls')),
 ]
