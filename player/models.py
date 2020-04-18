@@ -6,3 +6,6 @@ class Invitation(models.Model):
     to_user = models.ForeignKey(User, related_name="invitations_received")
     message = models.CharField(max_length=300)
     timestamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.from_user.username + ' to ' + self.to_user.username + ' '+str(self.timestamp)[:-13]
